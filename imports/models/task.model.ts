@@ -4,6 +4,7 @@ import SimpleSchema from 'simpl-schema';
 export interface ITask {
   _id?: string,
   title: string,
+  listId: string,
   user: {
     _id: string, // ref to users collection
     username: string // denormalized
@@ -19,6 +20,9 @@ export const TaskSchema = new SimpleSchema({
     type: String,
     min: 3,
     max: 12
+  },
+  listId: {
+    type: String
   },
   user: {
     type: Object
